@@ -2,16 +2,15 @@
 
 class Database{
    
-    const HOSTNAME = 'localhost';	
-    const BASE = 'blogmvc';
+    const HOST_BD = 'mysql:host=localhost;dbname=blogmvc;charset=utf8';	
     const LOGIN_BD = 'root';
-    const pass_BD = 'root';
+    const PASS_BD = 'root';
 
     public function getConnection() //:PDO
     {
         try{
             
-            $connection = new PDO("mysql:server=HOSTNAME; dbname=BASE", "LOGIN_BD", "PASS_BD");
+            $connection = new PDO(self::HOST_BD, self::LOGIN_BD, self::PASS_BD);
             $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             return $connection;

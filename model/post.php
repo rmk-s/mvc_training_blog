@@ -19,6 +19,7 @@ class Post{
         $prep->execute([':postId'=>$postId]);
         $prep->fetch();
     }
+
 }
 
 
